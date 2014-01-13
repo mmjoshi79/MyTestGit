@@ -19,13 +19,16 @@
         var map1 = new google.maps.Map(document.getElementById("googleMap1")
   , mapProp);
 
+        
         var mapProp2 = {
             center: new google.maps.LatLng(18.490171, 73.788983),
-            zoom: 15,
+            zoom: 5,
             mapTypeId: google.maps.MapTypeId.ROADMAP
         };
         var map2 = new google.maps.Map(document.getElementById("googleMap2")
  , mapProp2);
+
+     
 
 
         //var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
@@ -59,6 +62,27 @@
 
         myCity.setMap(map2);
 
+        //marker = new google.maps.marker({
+        //position: new google.maps.LatLng(18.490171, 73.788983),
+        //    animation: google.maps.animation.bounce
+        //});
+
+        //marker.setmap(map2);
+
+        var marker = new google.maps.Marker({
+            position: map2.getCenter(),
+            map: map2,
+            animation:google.maps.Animation.BOUNCE,
+            optimized: false,
+            zIndex: 5
+        })
+
+        //google.maps.event.addListener(map2, 'center_changed', function () {
+        //    window.setTimeout(function () {
+        //        showModalDialog("Test", map2);
+        //        map.panTo(marker.getPosition());
+        //    }, 3000);
+        //});
 
     }
 
